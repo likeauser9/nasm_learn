@@ -25,9 +25,11 @@ _start:
     mov rdx, calc_lable_len
     syscall
 
+    ; read user input
     mov rax, 0
     mov rdi, 0
     mov rsi, buffer
+    mov 
 
     mov rax, 1
     mov rdi, 1
