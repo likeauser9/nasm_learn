@@ -1,20 +1,20 @@
 global _start
 
 section .bss
-buffer resb 100
-input_length resb 1
+    buffer resb 100
+    input_length resb 1
 
 section .data
-message db 72, 101, 108, 108, 111, 0
+    message db 72, 101, 108, 108, 111, 0
 
-prompt db "Enter any string: ", 0
-prompt_len equ $ - prompt
+    prompt db "Enter any string: ", 0x00
+    prompt_len equ $ - prompt
 
-output_prefix db "Your string: ", 0
-output_prefix_len equ $ - output_prefix
+    output_prefix db "Your string: ", 0
+    output_prefix_len equ $ - output_prefix
 
-calc_lable db "Мой калькулятор на NASM", 0
-calc_lable_len equ $ - calc_lable
+    calc_lable db "Мой калькулятор на NASM", 0
+    calc_lable_len equ $ - calc_lable
 
 section .text
 _start:
@@ -29,7 +29,8 @@ _start:
     mov rax, 0
     mov rdi, 0
     mov rsi, buffer
-    mov 
+    mov rdx, 100
+    syscall
 
     mov rax, 1
     mov rdi, 1
